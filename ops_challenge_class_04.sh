@@ -32,9 +32,9 @@ mkdir $dir3
 mkdir $dir4
 
 #Reference the array variable to create a new .txt file in each directory
-touch  "/home/dave/ops-201d8-code-challenges/"${directory_array[0]}/$file1""
-touch "/home/dave/ops-201d8-code-challenges/"${directory_array[1]}/$file2""
-touch "/home/dave/ops-201d8-code-challenges/"${directory_array[2]}/$file3""
-touch "/home/dave/ops-201d8-code-challenges/"${directory_array[3]}/$file4""
+touch "${directory_array[0]}/$file1"
+touch "${directory_array[1]}/$file2"
+touch "${directory_array[2]}/$file3"
+touch "${directory_array[3]}/$file4"
 
 # END
