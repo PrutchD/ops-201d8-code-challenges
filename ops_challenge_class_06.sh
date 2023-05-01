@@ -20,9 +20,12 @@ arr_loop(){
     #iterate over array creating files as needed returning info as to file status (already exists or created)
     for file in "${file_arr[@]}";
     do 
+        #check if file exists
         if [ -e $file ]; 
+        # if it exists
         then
             echo "this file already exists"
+        # if it doesn't exist create it
         else
             touch "${file[@]}"
             echo "${file[@]} created"
@@ -38,7 +41,7 @@ del_dir1(){
     read ans
     if [ $ans == "y" ];
     then
-        #removes the directory and all sub files
+        # removes the directory and all sub files
         rm -r $dir1
         echo "dir1 has been deleted"
     fi
