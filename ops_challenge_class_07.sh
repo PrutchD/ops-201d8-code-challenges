@@ -32,10 +32,12 @@ ram(){
 }
 
 # Main
-
+# get computer name
+hostname
+# Call Functions
 cpu
 ram
-## pulls display data | -v omits unwanted data
+# pulls display data | -v omits unwanted data
 lshw -C display | grep -v "logical name" | grep -v "version"
 # pulls network adapter
 lshw -C network
