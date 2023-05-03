@@ -13,7 +13,8 @@ cpu_arr=("*-cpu" "product" "vendor" "physical id" "bus info" "width")
 ram_arr=("*-memory" "description" "physical id" "size")
 # Declaration of functions
 # Return cpu data using cpu_arr
-cpu(){  
+cpu(){ 
+    echo "CPU" 
     # iterate through array   
     for i in "${cpu_arr[@]}";
     do
@@ -23,22 +24,26 @@ cpu(){
 }
 # Return memory data using ram_arr
 ram(){
+    echo "RAM"
     # iterate through array 
     for i in "${ram_arr[@]}";
     do
         # pulls memory data | -v omits unneccessary data related to firmware | pulls specific data from ram_arr 
-        lshw -C memory | grep -v "BIOS" | grep -v "0" | grep -v "128" | grep "$i"
+        lshw -C memory | grep -v "BIOS" | grep -v "0" | grep -v "KiB" | grep "$i"
     done
 }
 
 # Main
+echo "Host Computer Name"
 # get computer name
 hostname
 # Call Functions
 cpu
 ram
+echo "Display Adapter"
 # pulls display data | -v omits unwanted data
 lshw -C display | grep -v "logical name" | grep -v "version"
-# pulls network adapter
+echo "Network Adapter"
+# pulls network adapter data
 lshw -C network
 # End
