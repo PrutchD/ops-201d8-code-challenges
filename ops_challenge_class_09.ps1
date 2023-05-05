@@ -18,7 +18,7 @@ Get-EventLog -LogName System -After(Get-Date).AddDays(-1) | Out-File $home\Deskt
 # Get-EventLog -LogName System pulls the system Logs.
 # -EntryType Error filters by entry type. Error logs for this case.
 # After the | Out-File writes the output to a file followed by the pathending with the file name.
-Get-EventLog -LogName System -EntryType Error | Out-File &home\Desktop\SysErrLog.txt
+Get-EventLog -LogName System -EntryType Error | Out-File $home\Desktop\SysErrLog.txt
 
 # This Command will Print to the screen all events with ID of 16 from the System event log. 
 # desktop named last_24.txt.
