@@ -6,10 +6,10 @@
 # Main
 
 # This will display all the running processes on this system sorted by CPU Descending order- can be filtered by Id Name etc...
-Get-Process | Sort-Object CPU Descending
+Get-Process | Sort-Object -Property CPU -Descending
 
 # This will display all the running processes on this system sorted by ID Descending order
-Get-Process | Sort-Object ID Descending
+Get-Process | Sort-Object -Property ID -Descending
 
 # This will print to the terminal screen the top five active processes ordered by highest Working Set (WS(K)) at the top.
 Get-Process | Select-Object -First 5 | Sort-Object WorkingSet64 -Descending
@@ -29,5 +29,5 @@ for ($i = 1 ; $i -le 10 ; $i++) {
 Stop-Process -Name "Notepad"
 
 # Stops process by ID number ( I selected ID # 5424) need to select a process that won't disable the system.
-Stop-Process -ID 5424
+Stop-Process -ID 6776
 # End
