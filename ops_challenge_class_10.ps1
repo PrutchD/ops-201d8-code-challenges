@@ -3,24 +3,31 @@
 # Date of latest revision:      05/05/2023
 # Purpose:                      Write a set of Powershell commands that fetch info about running processes, open processes, and close processes.
 
-# This entire script can be run all at once. It will get the process information open Microsoft Edge from the file location
-# Wait 10 seconds then close Microsoft Edge
-
 # Main
 
-# This will display all the running processes on this system - can be filtered by Id Name etc...
-Get-Process
+# This will display all the running processes on this system sorted by CPU Descending order- can be filtered by Id Name etc...
+Get-Process | Sort-Object CPU Descending
 
-# Filter Example filtering by Name of process
-Get-Process -Name winLogon
+# This will display all the running processes on this system sorted by ID Descending order
+Get-Process | Sort-Object ID Descending
+
+# This will print to the terminal screen the top five active processes ordered by highest Working Set (WS(K)) at the top.
+Get-Process | Select-Object -First 5 | Sort-Object WorkingSet64 -Descending
 
 # This will open the selected process - using msedge for this example because it should be on all virtual machines
 Start-Process -FilePath "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Edge.lnk"
 
-# This commandlet will pause the commands for 10 seconds to let edge load before the last commandlet closes the process
-Start-Sleep -Seconds 10
-
 # This process will close msedge by referencing the process name after the 10 second sleep time
 Stop-Process -Name msedge
 
+# Using a for loop start notepad app 10 times
+for ($i = 1 ; $i -le 10 ; $i++) {
+    Start-Process notepad
+}
+
+# Stops notepad app
+Stop-Process -Name "Notepad"
+
+# Stops process by ID number ( I selected ID # 5424) need to select a process that won't disable the system.
+Stop-Process -ID 5424
 # End
