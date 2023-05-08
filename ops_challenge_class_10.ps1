@@ -28,6 +28,6 @@ for ($i = 1 ; $i -le 10 ; $i++) {
 # Stops notepad app
 Stop-Process -Name "Notepad"
 
-# Stops process by ID number ( I selected ID # 5424) need to select a process that won't disable the system.
+# Stops process by ID number ( I selected ID # 6776) need to select a process that won't disable the system.
 Stop-Process -ID 6776
 # End
