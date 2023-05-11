@@ -11,10 +11,9 @@ $path = "$home\Desktop"
 # Declaration of Functions
 function Network-Report{
     # Create a local file called network_report.txt that holds the contents of an ipconfig /all command.
-    New-Item $path\$file
-    ipconfig /all |Out-File $path\$file
+    ipconfig |Out-File $path\$file
     # Use Select-String to search network_report.txt and return only the IP version 4 address.
-    Get-Content $path\$file | Select-String -Pattern "IPv4"
+    Select-String $path\$file -Pattern "IPv4"
     # Remove the network_report.txt when you are finished searching it.
     Remove-Item $path\$file
 
