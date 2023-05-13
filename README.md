@@ -1,6 +1,5 @@
 ### Purpose of this Repo:
-- I am attending a boot camp through Code Fellows.
-- I am enrolled in the Cyber Security Engineering Program working towards the following certifications: 
+- Enrolled in the Cyber Security Engineering Program through Code Feoolws working towards the following certifications: 
     - Comptia ITF+
     - Comptia Network+
     - Comptia Security+
@@ -14,7 +13,7 @@
 - In addition to QA I have a background in electrical troubleshooting and love to solve complex problems.
 - I am hoping to combine my new skills with my old ones to break into the Cyber Security field possibly work my way into DevOps.
 
-### Fundementa Concepts Learned in Ops 201:
+### Fundemental Concepts Learned in Ops 201:
 - Creating, accessing and utilizing Virtual Machines.
     - Servers and PC systems
     - Running locally an a HyperVisor
@@ -40,7 +39,7 @@
     - [Code Fellows Reading Notes](https://github.com/PrutchD/code-fellows-reading-notes/wiki)
 
 ## Favorite Challenges from this course:
-- I really enjoyed all ops-challenges relating to Powershell. I knew it was powerful and based in C# but I did not know it would be so user friendly. Using the Powershell ISE for scripting made creating these scripts smooth. I really appreciate the documentation Microsoft has for this as well, it is some of the most complete and eaasy to follow documentation I have seen.
+- I really enjoyed all ops-challenges relating to Powershell. I knew it was powerful and based on the .Net framework but I did not know it would be so user friendly. Using the Powershell ISE for scripting made creating these scripts smooth. I really appreciate the documentation Microsoft has for this as well, it is some of the most complete and eaasy to follow documentation I have seen.
 
 ### How can these scripts be utilized to work for your company?:
 - Lets just look at [Ops Challenge 8](https://github.com/PrutchD/ops-201d8-code-challenges/blob/main/ops_challenge_class_08.bat) This simple .bat file copies a users files to a separate drive to create a complete backup. This can be set up to run using windows Task Scheduler to run at the end of each work day. Each day it will backup the files automatically overwriting previous data creating an accurate up to date backup in case something goes wrong with their system and it needs to be wiped all their files can be restored.
